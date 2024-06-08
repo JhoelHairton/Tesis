@@ -10,13 +10,19 @@
         <module name="ms-config-server" />
         <module name="servicio-jurados" />
         <module name="Servicio-evaluaciones" />
+        <module name="ms-gestionareasylineas" />
+        <module name="ms-GestionTesis-ProjectoTesis" />
+        <module name="ms-gestiondocentes" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Servicio-evaluaciones" options="-parameters" />
+      <module name="ms-GestionTesis-ProjectoTesis" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
+      <module name="ms-gestionareasylineas" options="-parameters" />
+      <module name="ms-gestiondocentes" options="-parameters" />
       <module name="servicio-jurados" options="-parameters" />
     </option>
   </component>
