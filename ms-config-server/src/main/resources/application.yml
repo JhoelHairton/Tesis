@@ -9,6 +9,8 @@ spring:
         git:
           uri: https://github.com/JhoelHairton/Tesis.git # ruta del repositorio git
           searchPaths: config-data
+          #username:
+          #password:
           default-label: main
   security:
     user:
