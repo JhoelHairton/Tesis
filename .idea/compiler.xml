@@ -13,11 +13,13 @@
         <module name="ms-gestionareasylineas" />
         <module name="ms-GestionTesis-ProjectoTesis" />
         <module name="ms-gestiondocentes" />
+        <module name="Ms-registry-server" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Ms-registry-server" options="-parameters" />
       <module name="Servicio-evaluaciones" options="-parameters" />
       <module name="ms-GestionTesis-ProjectoTesis" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
