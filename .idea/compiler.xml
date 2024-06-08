@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ms-config-server" />
+        <module name="ms-gateway-server" />
         <module name="servicio-jurados" />
         <module name="Servicio-evaluaciones" />
         <module name="ms-gestionareasylineas" />
@@ -23,6 +24,7 @@
       <module name="Servicio-evaluaciones" options="-parameters" />
       <module name="ms-GestionTesis-ProjectoTesis" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
+      <module name="ms-gateway-server" options="-parameters" />
       <module name="ms-gestionareasylineas" options="-parameters" />
       <module name="ms-gestiondocentes" options="-parameters" />
       <module name="servicio-jurados" options="-parameters" />

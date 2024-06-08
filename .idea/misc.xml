@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/ms-gestiondocentes/pom.xml" />
         <option value="$PROJECT_DIR$/ms-GestionTesis-ProjectoTesis/pom.xml" />
         <option value="$PROJECT_DIR$/Ms-registry-server/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-gateway-server/pom.xml" />
       </list>
     </option>
   </component>
