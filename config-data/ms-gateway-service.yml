@@ -44,7 +44,7 @@ spring:
             - Path=/proyectostesis/**, /doctesis/**, /tesistas/**
           filters:
             - AuthFilter
-            -
+
         - id: ms-jurados-service
           uri: lb://ms-jurados-service
           predicates:
