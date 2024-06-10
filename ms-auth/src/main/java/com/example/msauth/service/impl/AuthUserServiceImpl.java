@@ -3,6 +3,7 @@ package com.example.msauth.service.impl;
 import com.example.msauth.dto.AuthUserDto;
 import com.example.msauth.dto.RequestDto;
 import com.example.msauth.entity.AuthUser;
+import com.example.msauth.entity.NewUserDto;
 import com.example.msauth.entity.TokenDto;
 
 import com.example.msauth.repository.AuthRepository;
@@ -25,7 +26,7 @@ public class AuthUserServiceImpl implements AuthUserService {
 
 
     @Override
-    public AuthUser save(AuthUserDto authUserDto) {
+    public AuthUser save(NewUserDto authUserDto) {
         Optional<AuthUser> user = authRepository.findByUserName(authUserDto.getUserName());
         if (user.isPresent())
             return null;
@@ -33,6 +34,7 @@ public class AuthUserServiceImpl implements AuthUserService {
         AuthUser authUser = AuthUser.builder()
                 .userName(authUserDto.getUserName())
                 .password(password)
+                .role(authUserDto.getRole())
                 .build();
 
         return authRepository.save(authUser);

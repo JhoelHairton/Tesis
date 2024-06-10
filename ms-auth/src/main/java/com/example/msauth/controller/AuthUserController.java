@@ -3,6 +3,7 @@ package com.example.msauth.controller;
 import com.example.msauth.dto.AuthUserDto;
 import com.example.msauth.dto.RequestDto;
 import com.example.msauth.entity.AuthUser;
+import com.example.msauth.entity.NewUserDto;
 import com.example.msauth.entity.TokenDto;
 import com.example.msauth.service.AuthUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,7 @@ public class AuthUserController {
 
 
     @PostMapping("/create")
-    public ResponseEntity<AuthUser> create(@RequestBody AuthUserDto authUserDto) {
+    public ResponseEntity<AuthUser> create(@RequestBody NewUserDto authUserDto) {
         AuthUser authUser = authUserService.save(authUserDto);
         if (authUser == null)
             return ResponseEntity.badRequest().build();
