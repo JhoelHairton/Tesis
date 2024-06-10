@@ -1,6 +1,7 @@
 package com.example.msauth.controller;
 
 import com.example.msauth.dto.AuthUserDto;
+import com.example.msauth.dto.RequestDto;
 import com.example.msauth.entity.AuthUser;
 import com.example.msauth.entity.TokenDto;
 import com.example.msauth.service.AuthUserService;
@@ -26,8 +27,8 @@ public class AuthUserController {
 
 
     @PostMapping("/validate")
-    public ResponseEntity<TokenDto> validate(@RequestParam String token) {
-        TokenDto tokenDto = authUserService.validate(token);
+    public ResponseEntity<TokenDto> validate(@RequestParam String token, @RequestBody RequestDto dto) {
+        TokenDto tokenDto = authUserService.validate(token, dto);
         if (tokenDto == null)
             return ResponseEntity.badRequest().build();
         return ResponseEntity.ok(tokenDto);

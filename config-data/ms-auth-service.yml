@@ -30,3 +30,12 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 jwt:
   secret: secret
+
+admin-paths:
+  paths:
+    -
+      uri: "/docentes"
+      method: "POST"
+    -
+      uri: "/areas"
+      method: "POST"

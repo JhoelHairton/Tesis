@@ -1,6 +1,7 @@
 package com.example.msauth.service.impl;
 
 import com.example.msauth.dto.AuthUserDto;
+import com.example.msauth.dto.RequestDto;
 import com.example.msauth.entity.AuthUser;
 import com.example.msauth.entity.TokenDto;
 
@@ -47,10 +48,9 @@ public class AuthUserServiceImpl implements AuthUserService {
         return null;
     }
 
-
     @Override
-    public TokenDto validate(String token) {
-        if (!jwtProvider.validate(token))
+    public TokenDto validate(String token, RequestDto dto) {
+        if (!jwtProvider.validate(token, dto))
             return null;
         String username = jwtProvider.getUserNameFromToken(token);
         if (!authRepository.findByUserName(username).isPresent())
