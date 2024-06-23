@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ms-config-server" />
         <module name="ms-gateway-server" />
-        <module name="ms-auth" />
+        <module name="auth-service" />
         <module name="servicio-jurados" />
         <module name="Servicio-evaluaciones" />
         <module name="ms-gestionareasylineas" />
@@ -19,6 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ms-auth" target="17" />
       <module name="user-service" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -26,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Ms-registry-server" options="-parameters" />
       <module name="Servicio-evaluaciones" options="-parameters" />
+      <module name="auth-service" options="-parameters" />
       <module name="ms-GestionTesis-ProjectoTesis" options="-parameters" />
       <module name="ms-auth" options="-parameters" />
       <module name="ms-config-server" options="-parameters" />
