@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class EvaluacionFinalService {
@@ -40,5 +41,9 @@ public class EvaluacionFinalService {
         evaluacionFinal.setFechaEvaluacion(new Date());
 
         return evaluacionFinalRepository.save(evaluacionFinal);
+    }
+
+    public List<EvaluacionFinal> obtenerEvaluacionesFinales() {
+        return evaluacionFinalRepository.findAll();
     }
 }

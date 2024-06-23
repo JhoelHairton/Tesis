@@ -3,10 +3,9 @@ package com.example.servicioevaluaciones.controller;
 import com.example.servicioevaluaciones.entity.EvaluacionFinal;
 import com.example.servicioevaluaciones.service.EvaluacionFinalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/evaluaciones-finales")
@@ -22,5 +21,9 @@ public class EvaluacionFinalController {
             @RequestParam String comentarios) {
 
         return evaluacionFinalService.registrarEvaluacionFinal(idProyectoTesis, idJurado, voto, comentarios);
+    }
+    @GetMapping
+    public List<EvaluacionFinal> listarEvaluacionesFinales() {
+        return evaluacionFinalService.obtenerEvaluacionesFinales();
     }
 }

@@ -7,10 +7,10 @@ import com.example.servicioevaluaciones.repository.DocenteRepository;
 import com.example.servicioevaluaciones.repository.ProyectoTesisRepository;
 import com.example.servicioevaluaciones.service.EvaluacionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/evaluaciones")
@@ -25,7 +25,7 @@ public class EvaluacionController {
     @Autowired
     private DocenteRepository docenteRepository;
 
-    @PostMapping
+    @PostMapping("/registrar")
     public Evaluacion registrarEvaluacion(
             @RequestParam Long proyectoTesisId,
             @RequestParam Long asesorId,
@@ -40,5 +40,11 @@ public class EvaluacionController {
 
 
         return evaluacionService.registrarEvaluacion(proyectoTesisId, asesorId, observaciones, recomendaciones, estado);
+    }
+
+    @GetMapping("/proyectos/{proyectoTesisId}/evaluaciones")
+    public ResponseEntity<List<Evaluacion>> obtenerEvaluacionesPorProyecto(@PathVariable Long proyectoTesisId) {
+        List<Evaluacion> evaluaciones = evaluacionService.obtenerEvaluacionesPorProyecto(proyectoTesisId);
+        return ResponseEntity.ok(evaluaciones);
     }
 }
